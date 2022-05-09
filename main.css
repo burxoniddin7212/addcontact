@@ -1,0 +1,25 @@
+.container{
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.addcontact__result-list{
+  width: 400px;
+  height: 380px;
+  background-color: #F8F9FA;
+  margin-left: 100px;
+  overflow: scroll;
+}
+
+.newLi-style{
+  background-color: #B1CFFB;
+  padding-left: 10px;
+}
+
+
+.remove-btn{
+  margin-left: 80px;
+}
