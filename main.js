@@ -1,13 +1,13 @@
 //Form and form elements
-let elForm = document.querySelector(".addcontact__form");
-let elNameInput = document.querySelector(".addcontact__name-input");
-let elSurnameInput = document.querySelector(".addcontact__surname-input");
-let elRelationSelect = document.querySelector(".addcontact__relation-select");
-let elNumberInput = document.querySelector(".addcontact__number-input");
-let elButtonSubmit = document.querySelector(".addcontact__form-btn ");
+let elForm = $(".addcontact__form"); 
+let elNameInput = $(".addcontact__name-input");
+let elSurnameInput = $(".addcontact__surname-input");
+let elRelationSelect = $(".addcontact__relation-select");
+let elNumberInput = $(".addcontact__number-input");
+let elButtonSubmit = $(".addcontact__form-btn ");
 
 //Outout Elements
-let elListResult = document.querySelector(".addcontact__result-list");
+let elListResult = $(".addcontact__result-list");
 
 
 //Arry
@@ -15,18 +15,16 @@ let relation = ["Friend", "Relative", "Stranger", "Other"];
 let contact = [];
 
 //Creat element
-let newP = document.createElement("p");
-newP.textContent = "Please fill all blank!"
-newP.classList.add("text-danger", "d-none");
-elForm.appendChild(newP);
+
+let newP = creatElement("p", "text-danger d-none", "Please fill all blank!")
+elForm.append(newP);
 
 //Function
 function relationship(){
   for(let i=0; i<relation.length; i++){
-    let newOption = document.createElement("option");
+    let newOption = creatElement("option", "", relation[i])
     newOption.name = "relation";
     newOption.value = relation[i];
-    newOption.textContent = relation[i];
     elRelationSelect.appendChild(newOption);
   }
 }
@@ -74,11 +72,8 @@ elForm.addEventListener("submit", function(e){
 
   addoutput();
 
-  console.log(elListResult);
   elNameInput.value = "";
   elSurnameInput.value = "";
-  elRelationSelect.value = "";
   elNumberInput.value = "";
-  console.log(contact);
 }
 )
